@@ -51,7 +51,7 @@ export const getText = (textObj) => {
 
 const siteData = {
 
-  name: "Baqer Hassani",
+  name: "Hi, I am Baqer Hassani",
  
   headerParagraph: "I am a robotics systems engineer passionate about bringing autonomous and biomimetic robots to life.",
 
@@ -67,7 +67,7 @@ const siteData = {
   // Section titles  
   sections: {
     about: "About",
-    nvidia: "University of Tulsa Undergraduate Researcher",
+    nvidia: "My projects",
     publications: "Publications",
     education: "Education",
     internships: "Internships",
@@ -193,9 +193,9 @@ const siteData = {
 // About Section --------------
   aboutParaOne: "I am a robotics engineer with expertise in simulation development, narrowing the sim-to-real gap by creation of high-fidelity virtual environments to accelerate robotic testing and deployment. I am particularly passionate about reinforcement learning and imitation learning, exploring control strategies that enable safer, more human-like interactions.",
   
-  aboutParaTwo: "I earned my Bachelor's degree in Mechatronics Engineering from the University of Waterloo. I also conducted human-robot interaction research at the Active Robotics Interaction Lab under Dr. Yue Hu, with a publication on IEEE Robotics and Automation Letters.",
+  aboutParaTwo: "",
   
-  aboutParaThree: "When I'm not building robots, you can find me hiking, playing my clarinet and accordion, or exploring new cuisines around the city.",
+  aboutParaThree: "",
 
   nvidiaTime: "2024 to Present",
 
