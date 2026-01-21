@@ -15,9 +15,6 @@ const Footer = () => {
             <h1>{getText(data.sections.contact, language)}</h1>
           </Fade>
           <Fade bottom>
-            <a className="email-link" href={`mailto:${data.contactEmail}`}>
-              {data.contactEmail}
-            </a>
             <button
               type="button"
               className="primary-btn"

@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // Components
 import Skills from "../components/skills"
-import Footer from "../components/Footer"
 import Project from "../components/projects"
 import Nvidia from "../components/NVIDIA"
 import Education from "../components/Education"
@@ -19,7 +18,6 @@ const IndexPage = () => (
     <Publications></Publications>
     {/* <Project></Project> */}
     <Skills></Skills>
-    <Footer></Footer>
   </Layout>
 )
 

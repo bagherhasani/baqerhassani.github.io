@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-
 /* Split layout inspired by rajpshinde.github.io (HTML5UP-style). */
 
 :root {
+  /* Big-tech standard: system UI font stack (fast, native, professional) */
+  --raj-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
   /* Clean professional palette */
   --raj-bg: #fafafa;
   --raj-surface: #ffffff;
@@ -31,6 +33,7 @@ body {
   padding: 0 !important; /* override mains.scss top padding */
   background: var(--raj-bg);
   color: var(--raj-text);
+  font-family: var(--raj-font-sans) !important;
 }
 
 .raj-layout {
@@ -53,8 +56,7 @@ body {
   padding: 48px 40px;
   text-align: left;
   background: var(--raj-sidebar-bg);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif !important;
+  font-family: var(--raj-font-sans) !important;
 }
 
 .raj-sidebar::before,
@@ -63,8 +65,7 @@ body {
 }
 
 .raj-sidebar * {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif !important;
+  font-family: var(--raj-font-sans) !important;
 }
 
 /* Subtle progress indicator */
@@ -231,19 +232,54 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.raj-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.raj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+.raj-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.raj-link-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 0 0 18px;
+}
+
+.raj-link-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* no special mobile rules needed for stacked avatar */
 
 .raj-main {
   height: 100vh;
   overflow-y: auto;
   background: var(--raj-bg);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif !important;
+  font-family: var(--raj-font-sans) !important;
 }
 
 .raj-main * {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif !important;
+  font-family: var(--raj-font-sans) !important;
 }
 
 .raj-main-inner {
@@ -400,6 +436,16 @@ body {
 /* Subtle media hover */
 .raj-main .nvidia-project:hover .nvidia-media-element {
   transform: scale(1.02) !important;
+}
+
+/* Education cover text: force white for readability */
+.raj-main .card.card-education .card-media-overlay {
+  color: #ffffff !important;
+}
+
+.raj-main .card.card-education .card-education-title,
+.raj-main .card.card-education .card-education-text {
+  color: #ffffff !important;
 }
 
 /* Tighten section rhythm */
