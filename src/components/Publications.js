@@ -5,7 +5,10 @@ import "../styles/publications.scss"
 
 // Import publication images/videos
 import hriLabGif from "../images/publications/hri_lab.gif"
-import urLousdVideo from "../images/publications/ur_lousd.mp4"
+// NOTE: videos are served via GitHub Releases URLs (no local video bundling)
+
+const FALLBACK_VIDEO_URL =
+  "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4";
 
 // Helper function to detect if file is a video
 const isVideoFile = (url) => {
@@ -104,15 +107,16 @@ const Publications = () => {
       subtitle: "International Mechanical Engineering Congress and Exposition 2024",
       imageSrc: hriLabGif,
       projectLink: "https://imece.secure-platform.com/a/solicitations/236/sessiongallery/18145/application/151001",
-      type: "IEEE"
+      type: ""
     },
     {
       id: 1,
       title: "Preventing Tipping in Mobile Manipulators Using Zero Moment Point Analysis",
       subtitle: "ICRA, 2025",
-      imageSrc: urLousdVideo,
-      projectLink: "https://dl.acm.org/doi/10.1145/3721251.3736528",
-      type: "ICRA 2026"
+      imageSrc: FALLBACK_VIDEO_URL,
+      projectLink: null,
+      underReview: true,
+      type: "ICRA 2025"
     }
   ];
 
@@ -220,18 +224,30 @@ const Publications = () => {
                     )}
                   </div>
                   <div className="content">
-                    <div className="publication-type" data-type={publication.type}>{publication.type}</div>
+                    {publication.type ? (
+                      <div className="publication-type" data-type={publication.type}>
+                        {publication.type}
+                      </div>
+                    ) : null}
                     <h3 className="header">{publication.title}</h3>
                     <h4 className="subtitle">{publication.subtitle}</h4>
-                    <button 
-                      onClick={() => {
-                        window.open(publication.projectLink, "_blank");
-                      }}
-                      type="button" 
-                      className="btn"
-                    > 
-                      {getText("View Publication")}
-                    </button>
+                    {publication.underReview ? (
+                      <button type="button" className="btn" disabled aria-disabled="true">
+                        {getText("Under committee review")}
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          window.open(publication.projectLink, "_blank");
+                        }}
+                        type="button"
+                        className="btn"
+                        disabled={!publication.projectLink}
+                        aria-disabled={!publication.projectLink}
+                      >
+                        {getText("View Publication")}
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}

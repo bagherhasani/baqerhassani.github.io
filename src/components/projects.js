@@ -13,7 +13,6 @@ import vexImg from "../images/ProjectPhotos/VEX.webp"
 import wearableImg from "../images/ProjectPhotos/wearableHacks.webp"
 import webappImg from "../images/ProjectPhotos/WebappProjects.webp"
 import mte380Img from "../images/ProjectPhotos/mte380.webp"
-import capstoneVideo from "../images/ProjectPhotos/BaqerHassani_Tracer_Lidar_Swarm_Video_Demo.mp4"
 
 const Project = () => {
   const { language } = useLanguage();
@@ -24,7 +23,6 @@ const Project = () => {
   const mediaMap = {
     airplaneImage,
     watoImage,
-    capstoneVideo,
     webappImg,
     wearableImg,
     mte380Img,
@@ -36,7 +34,10 @@ const Project = () => {
   // Get carousel items from data with translated content
   const carouselItems = data.projectsCarouselItems.map(item => ({
     ...item,
-    media: mediaMap[item.media],
+    // Allow either a key into mediaMap (local image import) or a direct URL (e.g. GitHub Releases)
+    media: (typeof item.media === "string" && /^https?:\/\//.test(item.media))
+      ? item.media
+      : mediaMap[item.media],
     title: getText(item.title, language),
     subtitle: getText(item.subtitle, language),
     description: getText(item.description, language),

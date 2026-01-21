@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // Components
 import Skills from "../components/skills"
-import Project from "../components/projects"
 import Nvidia from "../components/NVIDIA"
 import Education from "../components/Education"
 import Publications from "../components/Publications"
