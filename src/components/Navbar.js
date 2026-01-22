@@ -18,13 +18,13 @@ const Navbar = () => {
           
           <div className="center-nav">
             <div className="links-wrapper">
-              <button onClick= {event =>  window.location.href='/#home'} type="button">
+              <button onClick={() => (window.location.hash = "home")} type="button">
                 {getText(data.nav.home)}
               </button>
-              <button onClick= {event =>  window.location.href='/#nvidia'} type="button">
+              <button onClick={() => (window.location.hash = "nvidia")} type="button">
                 {getText(data.nav.work)}
               </button>
-              <button onClick= {event =>  window.location.href='/#contact'} type="button">
+              <button onClick={() => (window.location.hash = "contact")} type="button">
                 {getText(data.nav.contact)}
               </button>
             </div>

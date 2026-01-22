@@ -1,5 +1,6 @@
 module.exports = {
-  // Remove pathPrefix for custom domain setup
+  // GitHub Pages project site lives under /portfolio
+  pathPrefix: `/portfolio`,
   siteMetadata: {
     title: `Baqer Hassani`,
     description: `Here is my personal website`,
@@ -25,7 +26,8 @@ module.exports = {
       options: {
         name: `Baqer Hassani`,
         short_name: `Baqer`,
-        start_url: `/`,
+        // Must match pathPrefix for GitHub Pages project site
+        start_url: `/portfolio/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
