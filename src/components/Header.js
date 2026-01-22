@@ -66,7 +66,7 @@ const Header = () => {
             <div className="content-wrapper">
               <Fade bottom>
                 <h2>
-                  {getText({ en: "Hi, I am", zh: "你好,我是" })} {getText(data.name)}{" "}
+                  Hi, I am {getText(data.name)}{" "}
                 </h2>
               </Fade>
 
@@ -76,10 +76,10 @@ const Header = () => {
 
               <Fade bottom>
                 <a
-                  href={`https://www.linkedin.com/in/stevenfeng7/`}
+                  href={`mailto:${data.contactEmail}`}
                   className="primary-btn"
                 >
-                  {getText({ en: "CONNECT WITH ME!", zh: "与我联系！" })}
+                  Email me
                 </a>
               </Fade>
             </div>
@@ -104,7 +104,7 @@ const Header = () => {
         >
           <Fade bottom>
             <h2>
-              {getText({ en: "Hi, I am", zh: "你好,我是" })} {getText(data.name)}{" "}
+              Hi, I am {getText(data.name)}{" "}
             </h2>
           </Fade>
 
@@ -114,10 +114,10 @@ const Header = () => {
 
           <Fade bottom>
             <a
-              href={`https://www.linkedin.com/in/stevenfeng7/`}
+              href={`mailto:${data.contactEmail}`}
               className="primary-btn"
             >
-              {getText({ en: "CONNECT WITH ME!", zh: "与我联系！" })}
+              Email me
             </a>
           </Fade>
         </div>

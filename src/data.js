@@ -10,22 +10,9 @@ import airplaneIcon from "./images/skillsIcon/lidar_slam2.png"
 
 // Social Icon
 import githubIcon from "./images/contactIcon/github.svg"
-import linkedinIcon from "./images/contactIcon/linkedin.png"
-import googleScholarIcon from "./images/contactIcon/gscholar.png"
 
-
-// Company icon
-import TeslaIcon from "./images/company/Tesla.webp"
-import NVIDIAIcon from "./images/company/NVIDIA.webp"
-import EcobeeIcon from "./images/company/ecobee.webp"
-import UwaterlooIcon from "./images/company/Uwaterloo.webp"
-import KhazanahIcon from "./images/company/Khazanah.webp"
-import FordIcon from "./images/company/Ford.webp"
-
-// company image
-import uwaterloo from "./images/workPhotos/uwaterlootaImg.webp"
-import ford from "./images/workPhotos/Ford.webp"
-import ecobee from "./images/workPhotos/ecobeeProduct.webp"
+// Fallback image (used when we intentionally don't ship company/work photos locally)
+import fallbackImg from "./images/GoosePhoto.jpg"
 
 // School images
 import WaterlooLogo from "./images/school/tulsa_logo_quality.png"
@@ -52,7 +39,7 @@ export const getText = (textObj) => {
 
 const siteData = {
 
-  name: "Hi, I am Baqer Hassani",
+  name: "Baqer Hassani",
  
   headerParagraph: "I am a robotics systems engineer passionate about bringing autonomous and biomimetic robots to life.",
 
@@ -107,8 +94,8 @@ const siteData = {
       title: "Tesla",
       position: "Body Controls Developer - Tesla",
       para: "Developed lighting apps for new Model S/X and Tesla Semi, including Tesla Light Test.",
-      imageSrc: TeslaIcon,
-      url: "/work/tesla/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "05/2022 - 08/2022 ",
       description: [
         'Designed "Semi LightTest" feature for controlling 19 unique light groups across 4 controllers in C, displayed at the Tesla Semi Delivery Event by Elon Musk',
@@ -122,8 +109,8 @@ const siteData = {
       title: "NVIDIA",
       position: "Robotics Simulation Engineer - NVIDIA",
       para: "Built realistic sensors and simulated quadruped robots in NVIDIA Isaac Sim's robotics platform.",
-      imageSrc: NVIDIAIcon,
-      url: "/work/nvidia/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "01/2022 - 04/2022 ",
       description: [
         "Developed Quadruped extension for unitree A1 robots on Isaac Sim using Python, connected quadruped gait controlers to the quadruped model, and created ROS, ROS2, and Visual Inertial Odometry examples for Isaac Sim.",
@@ -137,8 +124,8 @@ const siteData = {
       title: "ecobee",
       position: "Embedded Systems Developer - ecobee",
       para: "Built production test fixtures and CV/ML algorithms for smart thermostat display testing.",
-      imageSrc: EcobeeIcon,
-      url: "/work/ecobee/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "05/2021 - 08/2021 ",
       description: [
         "Built display testing pipeline using C++ OpenCV to detect discoloration, misalignment, dead pixels, and poor connections, capable of detecting alignment offsets of 0.5mm and dead pixels under 0.2mm",
@@ -146,27 +133,27 @@ const siteData = {
         "Gathered requirements, designed, and developed customer firmware flash and label printer software for the smart thermostats using C++/CLI and .NET framework, logging results using MongoDB, printing labels using ZPL",
         "Drafted documentation and deployed customer firmware flash and label printer software at Wistron factory for Design Validation Test, projected to flash 80000+ units per month in full production"
       ],
-      workImg: ecobee,
+      workImg: fallbackImg,
     },
     {
       title: "University of Waterloo, Faculty of Electrical and Computer Engineering",
       position: "Teaching Assistant - University of Waterloo",
       para: "TA for intro C++ course; led tutorials, graded, designed exams.",
-      imageSrc: UwaterlooIcon,
-      url: "/work/uwaterloo/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "09/2020 - 12/2020 ",
       description: [
         "Designed questions on quizzes, midterm, and final and created automated testing using C++ and python to grade 300+ submissions per assessment and provide instantaneous feedback using Python expect library and regular expression based on the SOLID design principle",
         "Lead lab and help sessions for 300+ students assisted with teaching concepts in C++, such as dynamic memory allocation, Object-Oriented Programming, pointers, and linked lists, leads to a significant increase in student grades"
       ],
-      workImg: uwaterloo,
+      workImg: fallbackImg,
     },
     {
       title: "Khazanah National Americas",
       position: "Innovation Developer - Khazanah",
       para: "Explored drone, CV, and AR/VR tech to support investor understanding and decision-making.",
-      imageSrc: KhazanahIcon,
-      url: "/work/khazanah/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "01/2020 - 04/2020 ",
       description: [
         "Created a VR game based on Atari's Asteroids for Oculus Go platform, designed game logic, collision physics, and cloud leaderboard using C#, Unity, and Oculus developer toolkit, created asteroid models with blender",
@@ -179,15 +166,15 @@ const siteData = {
       title: "Ford Motor Company",
       position: "Manufacturing Software Developer - Ford",
       para: "Supported F150 Lightning development and testing using Jenkins, TestStand, C#, Python.",
-      imageSrc: FordIcon,
-      url: "/work/ford/",
+      imageSrc: fallbackImg,
+      url: "",
       date: "05/2019 - 08/2019 ",
       description: [
         "Developed automation pipeline to flash and systematically test devices routinely on the Jenkins platform for over 100 daily tests",
         "Prototyped utility in C# to flash multiple chips simultaneously on TestStand using C#, increasing efficiency by over 2 times",
         "Debugged audio issues for infotainment chips with TestStand and .Net Framework by recreating issues in controlled settings"
       ],
-      workImg: ford,
+      workImg: fallbackImg,
     },
   ],
 
@@ -490,16 +477,9 @@ projectsCarouselItems: [
   contactSubHeading: "Let's chat about robots!",
   social: [
 
-    { img: githubIcon, 
-      url: "https://github.com/stevenf7"
-    },
     {
-      img: googleScholarIcon,
-      url: "https://scholar.google.com/citations?hl=en&user=0YSkT7UAAAAJ",
-    },
-    {
-      img: linkedinIcon,
-      url: "https://www.linkedin.com/in/stevenfeng7/",
+      img: githubIcon,
+      url: "https://github.com/bagherhasani",
     },
 
   ],

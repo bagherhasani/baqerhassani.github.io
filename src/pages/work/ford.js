@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import fordLogo from "../../images/workPhotos/Ford.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function FordTab() {
   return (
@@ -14,7 +14,7 @@ export default function FordTab() {
         <SEO title="Software Developer at Ford Motor Company" />
         <Container>
           <figure className="position-relative">
-            <img src={fordLogo} alt="fordLogo" className="img-fluid" />
+            <img src={fallbackImg} alt="ford" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Software Developer - Ford Motor Company of Canada</h1>

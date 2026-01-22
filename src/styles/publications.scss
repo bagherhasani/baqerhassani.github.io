@@ -165,11 +165,6 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       
-      // IEEE official blue
-      &[data-type="IEEE"] {
-        background: #0066cc;
-      }
-      
       // ACM cyan
       &[data-type="ACM"] {
         background: #00bcd4;

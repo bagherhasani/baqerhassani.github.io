@@ -1,10 +1,6 @@
-# Hi, this is my personal website!
+# Baqer Hassani — personal website
 
-My name is Ji Yuan "Steven" Feng, I am a robotics engineer at NVIDIA, building the next generation simulation platforms for training and deploying sophisticated robots.
-
-This repo contains the source code to my personal website. 
-
-Checkout my site at: https://stevenf7.github.io/
+This repo contains the source code for Baqer Hassani’s personal website.
 
 ## Development
 

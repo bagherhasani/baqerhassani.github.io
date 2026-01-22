@@ -11,7 +11,7 @@ import Publications from "../components/Publications"
 const IndexPage = () => (
   <Layout>
     {/* eslint-disable-next-line react/jsx-pascal-case */}
-    <SEO title="Steven Feng Portfolio" />
+    <SEO title="Baqer Hassani" />
     <Nvidia></Nvidia>
     <Education></Education>
     <Publications></Publications>

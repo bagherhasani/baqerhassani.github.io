@@ -32,27 +32,27 @@ const Layout = ({ children }) => {
   // Sidebar scroll progress (driven by the right panel scroll container)
   useEffect(() => {
     if (typeof window === "undefined") return
-    const scroller = mainRef.current
     const layoutEl = layoutRef.current
-    if (!scroller || !layoutEl) return
+    if (!layoutEl) return
 
     let raf = 0
     const update = () => {
       if (raf) cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
-        const max = scroller.scrollHeight - scroller.clientHeight
-        const pct = max > 0 ? Math.min(1, Math.max(0, scroller.scrollTop / max)) : 0
+        const doc = document.documentElement
+        const max = doc.scrollHeight - window.innerHeight
+        const pct = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
         layoutEl.style.setProperty("--raj-scroll-pct", `${pct * 100}%`)
       })
     }
 
     update()
-    scroller.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("scroll", update, { passive: true })
     window.addEventListener("resize", update, { passive: true })
 
     return () => {
       if (raf) cancelAnimationFrame(raf)
-      scroller.removeEventListener("scroll", update)
+      window.removeEventListener("scroll", update)
       window.removeEventListener("resize", update)
     }
   }, [])

@@ -64,6 +64,43 @@ body {
   content: none; /* remove starfield + glow overlays */
 }
 
+/* Spline robot panel (left sidebar) */
+.raj-spline-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  /* Keep the robot as a "hero" accent, not the whole sidebar */
+  height: 34vh;
+  z-index: 0;
+  /* Don't block clicks/scroll in the sidebar; scene can still react via global events-target */
+  pointer-events: none;
+}
+
+.raj-spline-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.95;
+  filter: saturate(0.95) contrast(1.02);
+  pointer-events: none;
+}
+
+/* Fade the robot into the sidebar background for a cleaner look */
+.raj-spline-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 17, 0.15) 0%,
+    rgba(17, 17, 17, 0.35) 60%,
+    rgba(17, 17, 17, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
 .raj-sidebar * {
   font-family: var(--raj-font-sans) !important;
 }
@@ -151,10 +188,14 @@ body {
 
 .raj-sidebar-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* above Spline viewer */
   max-width: 26rem;
   width: 100%;
-  padding: 0; /* remove card padding */
+  /* Reserve space so the interactive robot panel doesn't cover text/buttons */
+  padding-top: 28vh;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
   border-radius: 0; /* remove card radius */
   background: transparent; /* remove card shade */
   border: 0; /* remove card border */
@@ -170,7 +211,8 @@ body {
   height: 120px;
   border-radius: 999px;
   padding: 0;
-  margin: 0 0 20px;
+  /* Pull the avatar up a bit so it overlaps the robot hero area */
+  margin: -28px 0 20px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -272,8 +314,9 @@ body {
 /* no special mobile rules needed for stacked avatar */
 
 .raj-main {
-  height: 100vh;
-  overflow-y: auto;
+  /* Use normal page scroll so Spline Viewer "Scroll Event" can work */
+  height: auto;
+  overflow: visible;
   background: var(--raj-bg);
   font-family: var(--raj-font-sans) !important;
 }
@@ -524,6 +567,14 @@ body {
 
   .raj-sidebar-progress {
     display: none;
+  }
+
+  .raj-spline-panel {
+    display: none;
+  }
+
+  .raj-sidebar-inner {
+    padding-bottom: 0;
   }
 
   .raj-main {

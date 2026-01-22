@@ -1,9 +1,9 @@
 module.exports = {
   // Remove pathPrefix for custom domain setup
   siteMetadata: {
-    title: `Hi, I'm am Baqer Hassani`,
+    title: `Baqer Hassani`,
     description: `Here is my personal website`,
-    author: `Steven Feng`,
+    author: `Baqer Hassani`,
   },
   // Add development-specific configuration
   flags: {
@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Steven Feng Portfolio`,
-        short_name: `Steven`,
+        name: `Baqer Hassani`,
+        short_name: `Baqer`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import khazanahlogo from "../../images/workPhotos/khazanahInnovation.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function KhazanahTab() {
   return (
@@ -14,7 +14,7 @@ export default function KhazanahTab() {
         <SEO title="Innovation at Khazanah" />
         <Container>
           <figure className="position-relative">
-            <img src={khazanahlogo} alt="khazanahlogo" className="img-fluid" />
+            <img src={fallbackImg} alt="khazanah" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Innovation - Khazanah</h1>

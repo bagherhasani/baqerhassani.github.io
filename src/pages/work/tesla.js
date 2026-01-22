@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import teslaPhoto from "../../images/workPhotos/TeslaWork.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function TeslaTab() {
   return (
@@ -14,7 +14,7 @@ export default function TeslaTab() {
         <SEO title="Software Developer at Tesla" />
         <Container>
           <figure className="position-relative">
-            <img src={teslaPhoto} alt="teslaPhoto" className="img-fluid" />
+            <img src={fallbackImg} alt="tesla" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Body Firmware Control Developer - Tesla</h1>

@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import nvidiaLogo from "../../images/workPhotos/IsaacSim.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function NvidiaTab() {
   return (
@@ -14,7 +14,7 @@ export default function NvidiaTab() {
         <SEO title="Robotics Simulation Intern" />
         <Container>
           <figure className="position-relative">
-            <img src={nvidiaLogo} alt="nvidialogo" className="img-fluid" />
+            <img src={fallbackImg} alt="nvidia" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Robotics Simulation Intern - NVIDIA</h1>

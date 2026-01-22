@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import TAlogo from "../../images/workPhotos/uwaterlootaImg.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function UwaterlooTATab() {
   return (
@@ -14,7 +14,7 @@ export default function UwaterlooTATab() {
         <SEO title="TA University of Waterloo" />
         <Container>
           <figure className="position-relative">
-            <img src={TAlogo} alt="TAlogo" className="img-fluid" />
+            <img src={fallbackImg} alt="uwaterloo" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Teaching Assistant - University of Waterloo (ECE 150)</h1>

@@ -2,6 +2,7 @@ import React from "react"
 import { useLanguage } from "../contexts/LanguageContext"
 import data, { getText } from "../data"
 import selfImage from "../images/Bagher_Profile.webp"
+import SplineRobot from "./SplineRobot"
 
 const RajSidebar = () => {
   // Keep language hook for compatibility with the rest of the app
@@ -11,9 +12,8 @@ const RajSidebar = () => {
 
   return (
     <aside className="raj-sidebar" aria-label="Profile sidebar">
-      <div className="raj-sidebar-progress" aria-hidden="true">
-        <div className="raj-sidebar-progress-fill" />
-      </div>
+      {/* Interactive robot (Spline) on the left panel; replaces the simple progress bar */}
+      <SplineRobot url="https://prod.spline.design/Ptdk2fACInwPoBTH/scene.splinecode" />
       <div className="raj-sidebar-inner">
         <div className="raj-top-avatar">
           <img className="raj-avatar" src={selfImage} alt={getText(data.name)} />

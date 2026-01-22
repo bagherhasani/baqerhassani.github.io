@@ -1,10 +1,10 @@
 import React from "react"
 import "../../css/worksiteStyle.scss"
 import { Container } from "react-bootstrap"
-import ecobeePic from "../../images/workPhotos/ecobeeProduct.webp"
 import Fade from "../../components/animations/Fade"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
+import fallbackImg from "../../images/GoosePhoto.jpg"
 
 export default function ecobeeTab() {
   return (
@@ -14,7 +14,7 @@ export default function ecobeeTab() {
         <SEO title="Embedded Developer at Ecobee" />
         <Container>
           <figure className="position-relative">
-            <img src={ecobeePic} alt="ecobeePic" className="img-fluid" />
+            <img src={fallbackImg} alt="ecobee" className="img-fluid" />
             <figcaption>
               <Fade bottom>
                 <h1>Embedded Developer - Ecobee</h1>
