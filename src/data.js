@@ -55,7 +55,7 @@ const siteData = {
   // Section titles  
   sections: {
     about: "About",
-    nvidia: "My projects",
+    nvidia: "Selected Technical Work",
     publications: "Publications",
     education: "Education",
     internships: "Internships",
@@ -179,7 +179,8 @@ const siteData = {
   ],
 
 // About Section --------------
-  aboutParaOne: "I am a robotics engineer with expertise in simulation development, narrowing the sim-to-real gap by creation of high-fidelity virtual environments to accelerate robotic testing and deployment. I am particularly passionate about reinforcement learning and imitation learning, exploring control strategies that enable safer, more human-like interactions.",
+  aboutParaOne:
+    "Robotics engineer focused on simulation development and sim-to-real transfer—building high-fidelity digital twins and scalable test environments to accelerate deployment. I develop autonomy stacks and learning-based control (RL/IL) with an emphasis on robust perception, safe interaction, and production-ready systems.",
   
   aboutParaTwo: "",
   

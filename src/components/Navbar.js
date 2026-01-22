@@ -24,9 +24,8 @@ const Navbar = () => {
               <button onClick= {event =>  window.location.href='/#nvidia'} type="button">
                 {getText(data.nav.work)}
               </button>
-              {/* Replaced Contact with Resume link */}
-              <button onClick={event => window.location.href='/resume'} type="button">
-                {getText(data.nav.resume)}
+              <button onClick= {event =>  window.location.href='/#contact'} type="button">
+                {getText(data.nav.contact)}
               </button>
             </div>
           </div>

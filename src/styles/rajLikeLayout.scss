@@ -85,6 +85,8 @@ body {
   opacity: 0.95;
   filter: saturate(0.95) contrast(1.02);
   pointer-events: none;
+  transform: scale(0.85);
+  transform-origin: center top;
 }
 
 /* Fade the robot into the sidebar background for a cleaner look */
@@ -204,31 +206,24 @@ body {
   -webkit-backdrop-filter: none;
 }
 
-/* remove inner glow layers (no card “shade”) */
-
 .raj-top-avatar {
-  width: 120px;
-  height: 120px;
+  width: 132px;
+  height: 132px;
   border-radius: 999px;
-  padding: 0;
+  padding: 4px;
   /* Pull the avatar up a bit so it overlaps the robot hero area */
-  margin: -28px 0 20px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.raj-name {
-  font-size: 1.75rem;
-  line-height: 1.2;
-  font-weight: 600;
-  margin: 0 0 1rem;
-  letter-spacing: -0.02em;
-  color: var(--raj-sidebar-text);
-}
-
-.raj-about {
-  margin: 0 0 1.5rem;
+  margin: -36px auto 18px;
+  background: radial-gradient(
+      140px 140px at 30% 20%,
+      rgba(120, 140, 255, 0.75),
+      rgba(255, 255, 255, 0.25) 45%,
+      rgba(0, 0, 0, 0.0) 70%
+    ),
+    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .raj-avatar {
@@ -237,71 +232,88 @@ body {
   border-radius: 999px;
   object-fit: cover;
   display: block;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+}
+
+.raj-name {
+  margin: 0.35rem 0 0.45rem;
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.raj-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.raj-profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.raj-about-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 14px 14px 15px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  margin: 0.95rem 0 1rem;
 }
 
 .raj-about-text {
   margin: 0;
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--raj-sidebar-muted);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.80);
   text-align: left;
   font-weight: 400;
-}
-
-.raj-actions {
-  display: flex;
-  justify-content: center;
-}
-
-.raj-resume-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border-radius: 6px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  letter-spacing: 0;
-  transition: border-color 200ms ease, background 200ms ease;
-}
-
-.raj-resume-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.005em;
 }
 
 .raj-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .raj-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-size: 0.875rem;
   line-height: 1.2;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .raj-link:hover {
   color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .raj-link-icon {
   display: inline-flex;
   width: 18px;
   height: 18px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
   flex: 0 0 18px;
 }
 
@@ -363,6 +375,30 @@ body {
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+/* Add a clean underline accent for "Selected Technical Work" */
+.raj-main #nvidia h1 {
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+
+.raj-main #nvidia h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(320px, 60%);
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(17, 17, 17, 0.9),
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 0.9;
 }
 
 .raj-main p {
