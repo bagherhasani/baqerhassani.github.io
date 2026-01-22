@@ -19,8 +19,15 @@ import WaterlooLogo from "./images/school/tulsa_logo_quality.png"
 import WaterlooImg from "./images/headerbaqer.webp"
 
 // NOTE: videos are served via GitHub Releases URLs (no local video bundling)
-const FALLBACK_VIDEO_URL =
-  "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4";
+const WAM_VIDEO_URL =
+  "https://github.com/bagherhasani/AntiTip/releases/download/baqvideos/Archelology.mp4";
+
+const ANTITIP_VIDEO_URL = "https://github.com/bagherhasani/AntiTip/releases/download/baqvideos/Project.Proposal.3.1.mp4";
+const SWORM_VIDEO_URL ="https://github.com/bagherhasani/AntiTip/releases/download/baqvideos/swarm_robotic_3tracers.mp4";
+const FOLLOWZED_VIDEO_URL ="https://github.com/bagherhasani/AntiTip/releases/download/baqvideos/Zed.Camera.View.1.mp4";
+const LIDAR_VIDEO_URL = "https://github.com/bagherhasani/AntiTip/releases/download/baqvideos/www.reallygreatsite.com.3.mp4";
+
+
 
 
 // Helper function for getting text (simplified as we now only support English)
@@ -103,7 +110,7 @@ const siteData = {
         'Brought up lighting fault detection and lighting alerts for Tesla Semi headlamps, rear lights, and trailer lights using C via CAN network',
         'Created self-tests for checking Semi\'s mirror, latch, steering wheel, and horn and fixed various firmware bugs for Model S/X lighting in C'
       ],
-      workImg: FALLBACK_VIDEO_URL,
+      workImg: WAM_VIDEO_URL,
     },
     {
       title: "NVIDIA",
@@ -117,7 +124,7 @@ const siteData = {
         "Created Isaac Sensor extension for simulating physic based sensors such as the contact sensor and IMU sensors using C++ and Python, written USD schema for the sensors, enabling visualization and modification of sensor parameters during runtime from the GUI",
         "Drafted user manual and extension documentations using Sphinx, and created unit tests for the quadruped and Isaac sensor extension."
       ],
-      workImg: FALLBACK_VIDEO_URL,
+      workImg: WAM_VIDEO_URL,
     },
 
     {
@@ -160,7 +167,7 @@ const siteData = {
         "Developed novel computer vision-based control for drones using Python OpenCV library, capable of tracking and following an Aruco marker in different lighting conditions up to 10 meters away, and autonomous take-off and land.",
         "Design open-sourced smart germicidal device with UV-C bulbs to sterilize personal devices; won Editor's Choice Award on Instructable"
       ],
-      workImg: FALLBACK_VIDEO_URL,
+      workImg: WAM_VIDEO_URL,
     },
     {
       title: "Ford Motor Company",
@@ -195,7 +202,7 @@ nvidiaExperience: [
 // NVIDIA Carousel Items
 nvidiaCarouselItems: [
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: LIDAR_VIDEO_URL,
     type: 'video',
       title: "Tracer AgileX LiDAR mapping with Ouster and ROS2",
       description: "AgileX Tracer mobile robot equipped with an Ouster LiDAR, used to build 2D maps of indoor environments and reason about obstacles in real time. Using the ouster-ros2 driver and the Tracer ROS2 stack, the system streams point clouds into a SLAM and occupancy-grid pipeline, visualized in RViz while the robot drives through the space. The resulting maps capture walls, obstacles, and free space, providing a foundation for future navigation and path-planning experiments.",
@@ -208,7 +215,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: WAM_VIDEO_URL,
     type: 'video',
       title: "Robotic replication of ancient stone tool use",
       description: "7-axis Barrett robotic arm with force sensing used to replicate prehistoric scraping and cutting motions with experimental stone tools for archaeological research. I programmed the arm in C++ using the Libbarrett library and designed a custom SolidWorks haft that securely clamps irregular stone tools with top-mounted bolts, enabling precise control of pose, contact angle, and applied force. By scraping hides to generate use-wear while logging force–torque data at high rate, the system produces consistent, repeatable wear patterns that would otherwise require long, monotonous human experiments.",
@@ -221,7 +228,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: ANTITIP_VIDEO_URL,
     type: 'video',
       title: "Preventing tipping in mobile manipulators with ZMP analysis",
       description: "UR5e cobot mounted on Agilex Tracer and Clearpath Ridgeback mobile bases, used to study when mobile manipulators stay stable or tip over. In Gazebo and PyBullet simulation, I compared ground contact forces and base torques from physics engines with a Python ZMP-based model to check when the Zero-Moment Point leaves the support polygon. The videos show stable candlestick poses, tipping events, and close agreement between simulation and analysis, forming the basis of an ICRA 2026 paper on safe ZMP-based operation for UR5e/UR10/UR20 on different AMRs.",
@@ -234,7 +241,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: FOLLOWZED_VIDEO_URL,
     type: 'video',
       title: "Person-following Robot with ZED depth perception",
       description: "Tracer mobile robot equipped with a ZED depth camera that detects and follows a person wearing a blue shirt by combining 3D perception and ROS2-based control. Using OpenCV color segmentation and ZED’s depth API, the system estimates the person’s (x, y, z) position, computes distance via sqrt(x^2 + y^2 + z^2) and horizontal angle via atan(x/z), then commands linear.x and angular.z through Twist messages to keep the target centered and at a safe distance. This project demonstrates a full perception-to-control pipeline for human-aware robot behavior with real-time feedback.",
@@ -247,7 +254,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: SWORM_VIDEO_URL,
     type: 'video',
       title: "Leader–follower swarm of Tracer robots in PyBullet",
       description: "Three AgileX Tracer mobile robots simulated in PyBullet, where one robot acts as the leader and two others follow in formation. I implemented a simple swarm-style leader–follower controller in Python: the leader tracks a reference path, while the followers compute relative position errors in simulation and generate velocity commands to maintain spacing and alignment. This project introduced me to swarm robotics concepts like formation control and coordination, using simulation to safely explore behaviors before trying them on real robots.",
@@ -260,7 +267,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: WAM_VIDEO_URL,
     type: 'video',
       title: "Validating UR cobot kinematics in Gazebo and PyBullet",
       description: "UR cobots modeled in Gazebo and PyBullet using URDFs, where I compared the simulated kinematics against the real robots before running hardware experiments. I checked link frames and joint limits against Denavit–Hartenberg parameters, ran inverse kinematics to reach target poses, and verified that simulated motions respected joint, reach, and collision constraints. This workflow let me debug mismatches between the URDF and the real arm and build safer motion plans before sending trajectories to physical UR robots.",
@@ -273,7 +280,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: ANTITIP_VIDEO_URL,
     type: 'video',
       title: "JOLT Idea Challenge winning AI chatbot for student support",
       description: "AI chatbot designed to help university students with academic and administrative questions, from course requirements and deadlines to campus services and policies. The system is built to answer common FAQs, guide students to the right resources, and reduce the load on human advisors by providing fast, 24/7 support. This project won the JOLT Idea Challenge for its potential to improve student experience and streamline university support workflows.",
@@ -286,7 +293,7 @@ nvidiaCarouselItems: [
       github: "https://github.com/bagherhassani"
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: LIDAR_VIDEO_URL,
     type: 'video',
       title: "Simulation for Tracer Robot with LiDAR",
       description: "ROS1 packages and Gazebo simulation setup for the AgileX Tracer mobile base with LiDAR, including drivers, URDF description, bringup, and visualization. I configured tracer_base, tracer_bringup, tracer_msgs, tracer_description, and tracer_gazebo_sim so the robot can be run in simulation with a mounted LiDAR, visualized in RViz, and controlled via teleop and cmd_vel. This work ties together CAN-to-USB setup, ugv_sdk, and launch files that spawn Tracer with LiDAR in a custom world, laying the groundwork for mapping and navigation experiments.",
@@ -330,7 +337,7 @@ projectsCarouselItems: [
     ]
   },
   {
-    media: "https://github.com/bagherhasani/Tracer_Lidar/releases/download/videos/Archelology.1.mp4",
+    media: SWORM_VIDEO_URL,
     type: 'video',
       title: "Capstone Project (2023)",
       subtitle: "Multi-robot exploration and SLAM in a simulated warehouse",
