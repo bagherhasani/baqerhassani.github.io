@@ -187,7 +187,7 @@ const siteData = {
 
 // About Section --------------
   aboutParaOne:
-    "Robotics engineer focused on simulation development and sim-to-real transfer—building high-fidelity digital twins and scalable test environments to accelerate deployment. I develop autonomy stacks and learning-based control (RL/IL) with an emphasis on robust perception, safe interaction, and production-ready systems.",
+    "I am a computer science junior at the University of Tulsa, minoring in Aritifical Intelligence and an undergraduate robotics researcher at the Institute for Robotics and Autonomy, where I focus on simulation, control, and autonomous systems.",
   
   aboutParaTwo: "",
   
@@ -266,45 +266,48 @@ nvidiaCarouselItems: [
       },
       github: "https://github.com/bagherhassani"
   },
-  {
-    media: WAM_VIDEO_URL,
-    type: 'video',
-      title: "Validating UR cobot kinematics in Gazebo and PyBullet",
-      description: "UR cobots modeled in Gazebo and PyBullet using URDFs, where I compared the simulated kinematics against the real robots before running hardware experiments. I checked link frames and joint limits against Denavit–Hartenberg parameters, ran inverse kinematics to reach target poses, and verified that simulated motions respected joint, reach, and collision constraints. This workflow let me debug mismatches between the URDF and the real arm and build safer motion plans before sending trajectories to physical UR robots.",
-      tags: ["UR Cobot", "Gazebo", "PyBullet", "Kinematics", "Simulation Safety"],
-      highlights: {
-        role: "Set up URDF-based UR simulations and validated kinematics and motion plans against real hardware models.",
-        tech: "URDF modeling, DH parameter checks, inverse kinematics, joint-limit and collision checks in Gazebo and PyBullet.",
-        impact: "Reduced the risk of unsafe motions on real UR cobots by catching kinematic and configuration issues in simulation first."
-      },
-      github: "https://github.com/bagherhassani"
-  },
-  {
-    media: ANTITIP_VIDEO_URL,
-    type: 'video',
-      title: "JOLT Idea Challenge winning AI chatbot for student support",
-      description: "AI chatbot designed to help university students with academic and administrative questions, from course requirements and deadlines to campus services and policies. The system is built to answer common FAQs, guide students to the right resources, and reduce the load on human advisors by providing fast, 24/7 support. This project won the JOLT Idea Challenge for its potential to improve student experience and streamline university support workflows.",
-      tags: ["AI Chatbot", "Student Support", "Conversational AI", "Education"],
-      highlights: {
-        role: "Designed the chatbot experience and built the core logic for answering academic and administrative questions.",
-        tech: "Conversational AI design, FAQ and knowledge-base querying, intent-focused dialogue flows.",
-        impact: "Improved access to information for students while reducing repetitive support work for staff, earning the JOLT Idea Challenge award."
-      },
-      github: "https://github.com/bagherhassani"
-  },
-  {
-    media: LIDAR_VIDEO_URL,
-    type: 'video',
-      title: "Simulation for Tracer Robot with LiDAR",
-      description: "ROS1 packages and Gazebo simulation setup for the AgileX Tracer mobile base with LiDAR, including drivers, URDF description, bringup, and visualization. I configured tracer_base, tracer_bringup, tracer_msgs, tracer_description, and tracer_gazebo_sim so the robot can be run in simulation with a mounted LiDAR, visualized in RViz, and controlled via teleop and cmd_vel. This work ties together CAN-to-USB setup, ugv_sdk, and launch files that spawn Tracer with LiDAR in a custom world, laying the groundwork for mapping and navigation experiments.",
-      tags: ["ROS", "Tracer Mobile Base", "LiDAR Integration", "Gazebo", "RViz"],
-      highlights: {
-        role: "Integrated Tracer ROS packages, LiDAR, and Gazebo simulation into a single bringup pipeline.",
-        tech: "tracer_ros stack (tracer_base, tracer_bringup, tracer_msgs, tracer_description, tracer_gazebo_sim), ugv_sdk, CAN interface setup, RViz navigation configs.",
-        impact: "Provided a ready-to-use simulation and visualization setup for Tracer with LiDAR, enabling easier mapping, navigation, and testing without risking the real robot."
-      },
-      github: "https://github.com/bagherhassani"
-  },
+  // {
+  //   media: WAM_VIDEO_URL,
+  //   hidden: true,
+  //   type: 'video',
+  //     title: "Validating UR cobot kinematics in Gazebo and PyBullet",
+  //     description: "UR cobots modeled in Gazebo and PyBullet using URDFs, where I compared the simulated kinematics against the real robots before running hardware experiments. I checked link frames and joint limits against Denavit–Hartenberg parameters, ran inverse kinematics to reach target poses, and verified that simulated motions respected joint, reach, and collision constraints. This workflow let me debug mismatches between the URDF and the real arm and build safer motion plans before sending trajectories to physical UR robots.",
+  //     tags: ["UR Cobot", "Gazebo", "PyBullet", "Kinematics", "Simulation Safety"],
+  //     highlights: {
+  //       role: "Set up URDF-based UR simulations and validated kinematics and motion plans against real hardware models.",
+  //       tech: "URDF modeling, DH parameter checks, inverse kinematics, joint-limit and collision checks in Gazebo and PyBullet.",
+  //       impact: "Reduced the risk of unsafe motions on real UR cobots by catching kinematic and configuration issues in simulation first."
+  //     },
+  //     github: "https://github.com/bagherhassani"
+  // },
+  // {
+  //   media: ANTITIP_VIDEO_URL,
+  //   hidden: true,
+  //   type: 'video',
+  //     title: "JOLT Idea Challenge winning AI chatbot for student support",
+  //     description: "AI chatbot designed to help university students with academic and administrative questions, from course requirements and deadlines to campus services and policies. The system is built to answer common FAQs, guide students to the right resources, and reduce the load on human advisors by providing fast, 24/7 support. This project won the JOLT Idea Challenge for its potential to improve student experience and streamline university support workflows.",
+  //     tags: ["AI Chatbot", "Student Support", "Conversational AI", "Education"],
+  //     highlights: {
+  //       role: "Designed the chatbot experience and built the core logic for answering academic and administrative questions.",
+  //       tech: "Conversational AI design, FAQ and knowledge-base querying, intent-focused dialogue flows.",
+  //       impact: "Improved access to information for students while reducing repetitive support work for staff, earning the JOLT Idea Challenge award."
+  //     },
+  //     github: "https://github.com/bagherhassani"
+  // },
+  // {
+  //   media: LIDAR_VIDEO_URL,
+  //   hidden: true,
+  //   type: 'video',
+  //     title: "Simulation for Tracer Robot with LiDAR bagher",
+  //     description: "ROS1 packages and Gazebo simulation setup for the AgileX Tracer mobile base with LiDAR, including drivers, URDF description, bringup, and visualization. I configured tracer_base, tracer_bringup, tracer_msgs, tracer_description, and tracer_gazebo_sim so the robot can be run in simulation with a mounted LiDAR, visualized in RViz, and controlled via teleop and cmd_vel. This work ties together CAN-to-USB setup, ugv_sdk, and launch files that spawn Tracer with LiDAR in a custom world, laying the groundwork for mapping and navigation experiments.",
+  //     tags: ["ROS", "Tracer Mobile Base", "LiDAR Integration", "Gazebo", "RViz"],
+  //     highlights: {
+  //       role: "Integrated Tracer ROS packages, LiDAR, and Gazebo simulation into a single bringup pipeline.",
+  //       tech: "tracer_ros stack (tracer_base, tracer_bringup, tracer_msgs, tracer_description, tracer_gazebo_sim), ugv_sdk, CAN interface setup, RViz navigation configs.",
+  //       impact: "Provided a ready-to-use simulation and visualization setup for Tracer with LiDAR, enabling easier mapping, navigation, and testing without risking the real robot."
+  //     },
+  //     github: "https://github.com/bagherhassani"
+  // },
   
 ],
 
@@ -482,7 +485,7 @@ projectsCarouselItems: [
 
   //   Contact Section --------------
 
-  contactSubHeading: "Let's chat about robots!",
+  contactSubHeading: "",
   social: [
 
     {

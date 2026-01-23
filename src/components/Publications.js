@@ -5,6 +5,8 @@ import "../styles/publications.scss"
 
 // Import publication images/videos
 import hriLabGif from "../images/publications/hri_lab.gif"
+import wam_pic from "../images/publications/pub_caveman.png"
+import anti_pic from "../images/publications/pub_anti.png"
 // NOTE: videos are served via GitHub Releases URLs (no local video bundling)
 
 const FALLBACK_VIDEO_URL =
@@ -105,18 +107,18 @@ const Publications = () => {
       id: 0,
       title: "Your Robot Is a Caveman: Using Robots for Archaeology",
       subtitle: "International Mechanical Engineering Congress and Exposition 2024",
-      imageSrc: hriLabGif,
+      imageSrc: wam_pic,
       projectLink: "https://imece.secure-platform.com/a/solicitations/236/sessiongallery/18145/application/151001",
       type: ""
     },
     {
       id: 1,
       title: "Preventing Tipping in Mobile Manipulators Using Zero Moment Point Analysis",
-      subtitle: "ICRA, 2025",
-      imageSrc: FALLBACK_VIDEO_URL,
+      subtitle: "IEEE International Conference on Robotics and Automation, 2026",
+      imageSrc: anti_pic,
       projectLink: null,
       underReview: true,
-      type: "ICRA 2025"
+      type: "ICRA 2026"
     }
   ];
 
@@ -134,9 +136,11 @@ const Publications = () => {
                   <div 
                     className="background-media"
                     style={{
-                      backgroundImage: publication.imageSrc.endsWith('.gif') 
-                        ? `linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(240, 248, 255, 0.5) 70%, rgba(240, 248, 255, 0.9) 85%, rgba(240, 248, 255, 1.0) 100%), url(${publication.imageSrc})`
-                        : 'none'
+                      // For image thumbnails, pass the URL via a CSS variable so the CSS
+                      // can render a crisp "contain" layer + a blurred "cover" layer behind it.
+                      ...(isVideoFile(publication.imageSrc)
+                        ? {}
+                        : { "--pub-img": `url(${publication.imageSrc})` }),
                     }}
                   >
                     {isVideoFile(publication.imageSrc) && canPlayVideo(publication) && (

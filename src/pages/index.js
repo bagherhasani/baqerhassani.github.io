@@ -7,6 +7,7 @@ import Skills from "../components/skills"
 import Nvidia from "../components/NVIDIA"
 import Education from "../components/Education"
 import Publications from "../components/Publications"
+import Footer from "../components/Footer"
 
 const IndexPage = () => (
   <Layout>
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <Publications></Publications>
     {/* <Project></Project> */}
     <Skills></Skills>
+    <Footer></Footer>
   </Layout>
 )
 

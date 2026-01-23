@@ -15,17 +15,9 @@ const Footer = () => {
             <h1>{getText(data.sections.contact, language)}</h1>
           </Fade>
           <Fade bottom>
-            <button
-              type="button"
-              className="primary-btn"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  window.location.href = "/resume";
-                }
-              }}
-            >
-              {getText(data.nav.resume, language)}
-            </button>
+            <a className="email-link" href={`mailto:${data.contactEmail}`}>
+              {data.contactEmail}
+            </a>
           </Fade>
         </div>
       </div>
